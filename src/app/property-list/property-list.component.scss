@@ -3,7 +3,7 @@
 @import "../../app/common/scss/media-queries";
 
 .house-details {
-  font-family: 'MavenPro-Regular';
+  font-family: 'MavenPro-Regular', serif;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -21,7 +21,7 @@
     display: block;
     margin-bottom: 20px;
     &--main-features {
-      font-family: 'MavenPro-Regular';
+      font-family: 'MavenPro-Regular', serif;
       color: #666;
     }
     &--area {
@@ -29,7 +29,7 @@
       flex: 1;
       flex-direction: column;
       h1 {
-        font-family: 'MavenPro-Bold';
+        font-family: 'MavenPro-Bold', serif;
         margin: 0 0 10px;
         span {
           display: flex;
@@ -38,7 +38,7 @@
     }
     &--price {
       display: flex;
-      font-family: 'MavenPro-Bold';
+      font-family: 'MavenPro-Bold', serif;
     }
     &--address {
       font-size: 0.5em;
@@ -86,7 +86,7 @@
         flex-direction: row;
       }
       dt {
-        font-family: 'MavenPro-Bold';
+        font-family: 'MavenPro-Bold', serif;
         display: flex;
         flex-basis: 30%;
       }
