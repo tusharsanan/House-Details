@@ -1,0 +1,5 @@
+@mixin media--gt-xs() {
+  @media (min-width: $layout-breakpoint-xs) {
+    @content;
+  }
+}

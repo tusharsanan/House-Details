@@ -1,0 +1,48 @@
+<div *ngIf="houseDetails">
+  <div class="house-details">
+    <div class="house-details__header">
+      <div class="house-details__header--area">
+        <h1>
+          <span>{{houseDetails.Adres}}</span>
+          <span class="house-details__header--address">{{houseDetails.Plaats}} {{houseDetails.Postcode}}</span>
+        </h1>
+        <div [innerHTML]="houseDetails.PrijsGeformatteerd" class="house-details__header--price"></div>
+      </div>
+      <div class="house-details__header--main-features">
+        <div>Living area: {{houseDetails.WoonOppervlakte}} m<sup>2</sup></div>
+        <div>Number of rooms: {{houseDetails.AantalKamers}}</div>
+        <div>Offered Since: {{houseDetails.AangebodenSindsTekst}}</div>
+      </div>
+    </div>
+    <div class="house-details__images">
+      <div class="house-details__images--main">
+        <img [src]="houseDetails.HoofdFoto"/>
+      </div>
+      <div class="house-details__images__secondary">
+        <div *ngFor="let media of houseDetails.Media; let i = index">
+        <div class="house-details__images__secondary--align" *ngIf="i<8">
+          <div *ngIf="media.MediaItems[0] && media.Categorie === 1">
+            <img [src]="media.MediaItems[0].UrlSecure"/>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="house-details__brief">
+      <h2>Characteristics</h2>
+      <div *ngFor="let characteristics of houseDetails.Kenmerken">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <h3>{{characteristics.Titel}}</h3>
+          </mat-expansion-panel-header>
+          <div *ngFor="let characteristicDetails of characteristics.Kenmerken">
+            <dl>
+              <dt>{{characteristicDetails.Naam}}</dt>
+              <dd [innerHTML]="characteristicDetails.Waarde"></dd>
+            </dl>
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>
+</div>

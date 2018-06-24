@@ -1,0 +1,95 @@
+
+@import "../../app/common/scss/variables";
+@import "../../app/common/scss/media-queries";
+
+.house-details {
+  font-family: 'MavenPro-Regular';
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 980px;
+  overflow: hidden;
+  margin: 0 auto;
+  &__header {
+
+    /* Using Mobile First Approach */
+
+    @include media--gt-xs {
+      display: flex;
+      flex: 1;
+    }
+    display: block;
+    margin-bottom: 20px;
+    &--main-features {
+      font-family: 'MavenPro-Regular';
+      color: #666;
+    }
+    &--area {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      h1 {
+        font-family: 'MavenPro-Bold';
+        margin: 0 0 10px;
+        span {
+          display: flex;
+        }
+      }
+    }
+    &--price {
+      display: flex;
+      font-family: 'MavenPro-Bold';
+    }
+    &--address {
+      font-size: 0.5em;
+      color: #666;
+    }
+  }
+  &__images {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #CDCDCD;
+    margin-bottom: 20px;
+    &--main {
+      img {
+        @include media--gt-xs() {
+          width: auto;
+        }
+        width: 100%;
+      }
+      margin-right: 10px;
+    }
+    &__secondary {
+      @include media--gt-xs() {
+        display: flex;
+      }
+      display: none;
+      align-items: end;
+      justify-content: flex-end;
+      flex-direction: row;
+      flex-wrap: wrap;
+      &--align {
+        padding: 0 2px;
+      }
+    }
+  }
+  &__brief {
+    h2 {
+      margin-bottom: 16px;
+    }
+    dl {
+      display: flex;
+      margin-bottom: 8px;
+      flex-direction: column;
+      @include media--gt-xs() {
+        flex-direction: row;
+      }
+      dt {
+        font-family: 'MavenPro-Bold';
+        display: flex;
+        flex-basis: 30%;
+      }
+    }
+  }
+}
